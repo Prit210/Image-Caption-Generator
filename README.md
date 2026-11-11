@@ -1,10 +1,10 @@
-# 🧠 Deep Learning Image Caption Generator
+# Deep Learning Image Caption Generator
 
 An end-to-end Image Captioning system built with PyTorch and deployed with Flask. The model combines a deep **ResNet-101** visual feature extractor, multi-scale feature projection, learnable sinusoidal 2D positional encodings, and a **Transformer Decoder**, fine-tuned with **Self-Critical Sequence Training (SCST)** reinforcement learning on the MS-COCO 2017 dataset.
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 - **Hybrid CNN-Transformer Architecture**:
   - **Visual Encoder**: ResNet-101 extracting multi-level representations (layers 2, 3, and 4) combined with single-query cross-attention pooling and 2D sinusoidal positional embeddings.
@@ -19,7 +19,7 @@ An end-to-end Image Captioning system built with PyTorch and deployed with Flask
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 ├── web_deploy/                  # Flask web deployment
@@ -54,7 +54,7 @@ An end-to-end Image Captioning system built with PyTorch and deployed with Flask
 
 ---
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### 1. Clone the Repository
 ```bash
@@ -80,7 +80,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📦 Model Weights Setup
+##  Model Weights Setup
 
 Because PyTorch checkpoint files (`*.pt`) exceed GitHub's 100 MB file size limit (~390 MB each), they are tracked via `.gitignore`.
 
@@ -96,7 +96,7 @@ Because PyTorch checkpoint files (`*.pt`) exceed GitHub's 100 MB file size limit
 
 ---
 
-## 🖥️ Running the Web Application
+##  Running the Web Application
 
 To launch the local web server:
 
@@ -120,7 +120,7 @@ Upload any image (`.jpg`, `.png`, `.jpeg`) to generate a caption in real-time.
 
 ---
 
-## 🏋️‍♂️ Training from Scratch
+## Training from Scratch
 
 The model is trained on the [MS-COCO 2017 Dataset](https://cocodataset.org/).
 
