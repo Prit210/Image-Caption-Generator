@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+
+
+# PyTorch / Deep Learning model weights (exclude large checkpoints > 100MB)
+*.pt
+*.pth
+
+# Web App user uploads (keep directory via .gitkeep)
+web_deploy/static/uploads/*
+!web_deploy/static/uploads/.gitkeep
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+

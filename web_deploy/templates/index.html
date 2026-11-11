@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Caption Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #2f2f4f;
+            padding: 30px;
+            border-radius: 15px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .upload-box {
+            border: 2px dashed #888;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .upload-box:hover {
+            border-color: #00d4ff;
+            background: rgba(0,212,255,0.1);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #00d4ff;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #00aacc;
+        }
+
+        img {
+            margin-top: 20px;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .caption {
+            margin-top: 15px;
+            font-size: 18px;
+            background: #1e1e2f;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .loading {
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🧠 Image Caption AI</h1>
+
+    <form method="POST" enctype="multipart/form-data" onsubmit="showLoading()">
+
+        <label class="upload-box">
+            📂 Click to upload image
+            <input type="file" name="image" required>
+        </label>
+
+        <button type="submit">Generate Caption</button>
+
+        <div class="loading" id="loading">
+            ⏳ Generating caption...
+        </div>
+
+    </form>
+
+    {% if image_path %}
+        <img src="{{ image_path }}">
+    {% endif %}
+
+    {% if caption %}
+        <div class="caption">
+            💬 {{ caption }}
+        </div>
+    {% endif %}
+</div>
+
+<script>
+function showLoading() {
+    document.getElementById("loading").style.display = "block";
+}
+</script>
+
+</body>
+</html>
